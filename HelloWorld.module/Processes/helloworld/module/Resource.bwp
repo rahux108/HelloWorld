@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpws:process exitOnStandardFault="no" name="helloworld.Resource"
+<bpws:process exitOnStandardFault="no" name="helloworld.module.Resource"
     suppressJoinFailure="yes"
-    targetNamespace="http://xmlns.example.com/20181203150431"
+    targetNamespace="http://xmlns.example.com/20181203152406"
     xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
     xmlns:info="http://www.tibco.com/bw/process/info"
-    xmlns:ns="http://xmlns.example.com/20181203150431PLT"
+    xmlns:ns="http://xmlns.example.com/20181203152406PLT"
     xmlns:ns0="http://www.tibco.com/pe/EngineTypes"
     xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
     xmlns:sca-bpel="http://docs.oasis-open.org/ns/opencsa/sca-bpel/200801"
@@ -172,11 +172,11 @@
             <element name="DuplicateKeyException" type="tns:DuplicateKeyExceptionType"/>
         </schema>
         <wsdl:definitions
-            targetNamespace="http://xmlns.example.com/20181203150431PLT"
+            targetNamespace="http://xmlns.example.com/20181203152406PLT"
             xmlns:extns="http://tns.tibco.com/bw/REST"
             xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
             xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"
-            xmlns:tns="http://xmlns.example.com/20181203150431PLT"
+            xmlns:tns="http://xmlns.example.com/20181203152406PLT"
             xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop"
             xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <plnk:partnerLinkType name="partnerLinkType">
@@ -202,7 +202,7 @@
             <wsdl:portType name="resource"
                 tibex:bw.rest.apipath="/resource"
                 tibex:bw.rest.basepath="Resource"
-                tibex:bw.rest.resource="Service Descriptors/helloworld.Resource-Resource.json"
+                tibex:bw.rest.resource="Service Descriptors/helloworld.module.Resource-Resource.json"
                 tibex:bw.rest.resource.source="generated" tibex:source="bw.rest.service">
                 <wsdl:documentation>Summary about the new REST service.</wsdl:documentation>
                 <wsdl:operation name="post">
@@ -215,7 +215,7 @@
         </wsdl:definitions>
     </tibex:Types>
     <tibex:ProcessInfo callable="false" createdBy="samehta"
-        createdOn="Mon Dec 03 15:04:31 IST 2018" description=""
+        createdOn="Mon Dec 03 15:24:06 IST 2018" description=""
         extraErrorVars="true" modifiers="public"
         productVersion="6.5.0 V63 2018-08-08" scalable="true"
         singleton="true" stateless="true" type="IT"/>
@@ -590,7 +590,7 @@
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
         <tibex:namespaceItem
-            namespace="http://xmlns.example.com/20181203150431PLT" prefix="tns"/>
+            namespace="http://xmlns.example.com/20181203152406PLT" prefix="tns"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://tns.tibco.com/bw/REST"/>
     <bpws:partnerLinks>
@@ -615,27 +615,27 @@
     <bpws:scope name="scope">
         <bpws:flow name="flow">
             <bpws:links/>
-            <bpws:pick createInstance="yes" name="pick" tibex:xpdlId="9049d64a-7330-44dc-894b-bd9719a9d8af">
+            <bpws:pick createInstance="yes" name="pick" tibex:xpdlId="50ab8b0b-b7c0-46ec-b4fd-183261456969">
                 <bpws:onMessage operation="post" partnerLink="resource"
                     portType="ns:resource"
-                    tibex:xpdlId="b3aefae1-8a80-45d8-8a29-a65c144edb85" variable="post">
+                    tibex:xpdlId="6f18b412-4165-48a8-986c-123d3df60b13" variable="post">
                     <bpws:scope name="scope1">
                         <bpws:flow name="flow1">
                             <bpws:links/>
                             <bpws:empty name="OnMessageStart"
-                                tibex:constructor="onMessageStart" tibex:xpdlId="c3ef8d67-c371-4690-982b-cd47f2363c7c"/>
+                                tibex:constructor="onMessageStart" tibex:xpdlId="4205f381-9f60-41d0-8597-7f2e647a6350"/>
                             <bpws:empty name="OnMessageEnd"
-                                tibex:constructor="onMessageEnd" tibex:xpdlId="e7ef83b9-a992-4307-a03e-349f490c6784"/>
+                                tibex:constructor="onMessageEnd" tibex:xpdlId="0ea83141-251d-4510-baa5-497f782d9dad"/>
                             <bpws:reply name="postOut" operation="post"
                                 partnerLink="resource"
                                 portType="ns:resource"
-                                tibex:xpdlId="e7a1a6a6-7d23-4c48-9f7a-441de86d32f7" variable="postOut-input">
+                                tibex:xpdlId="236144ec-bfca-4d06-8a5e-509f1fb6be03" variable="postOut-input">
                                 <tibex:inputBindings>
                                     <tibex:partBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://xmlns.example.com/20181203150431PLT&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;postOut-input&quot; match=&quot;/&quot;>&#xa;        &lt;item>&#xa;            &lt;xsl:value-of select=&quot;&amp;quot;Hello World&amp;quot;&quot;/>&#xa;        &lt;/item>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://xmlns.example.com/20181203152406PLT&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;postOut-input&quot; match=&quot;/&quot;>&#xa;        &lt;item>&#xa;            &lt;xsl:value-of select=&quot;&amp;quot;Hello World&amp;quot;&quot;/>&#xa;        &lt;/item>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                 </tibex:inputBindings>
                                 <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns="http://xmlns.example.com/20181203150431PLT" version="2.0"&gt;&lt;xsl:template name="postOut-input" match="/"&gt;&lt;tns:postResponse&gt;&lt;item&gt;&lt;xsl:value-of select="&amp;quot;Hello World&amp;quot;"/&gt;&lt;/item&gt;&lt;/tns:postResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns="http://xmlns.example.com/20181203152406PLT" version="2.0"&gt;&lt;xsl:template name="postOut-input" match="/"&gt;&lt;tns:postResponse&gt;&lt;item&gt;&lt;xsl:value-of select="&amp;quot;Hello World&amp;quot;"/&gt;&lt;/item&gt;&lt;/tns:postResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
                             </bpws:reply>
                         </bpws:flow>
                     </bpws:scope>

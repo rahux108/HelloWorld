@@ -4,30 +4,95 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.tibco.bw</groupId>
-    <artifactId>HelloWorld.application.parent</artifactId>
+    <artifactId>HelloWorld.parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <relativePath>..\HelloWorld.application.parent</relativePath>
+    <relativePath>..\HelloWorld.parent</relativePath>
   </parent>
   <artifactId>HelloWorld</artifactId>
-  <packaging>bwmodule</packaging>
-  <dependencies>
-    <dependency>
-      <groupId>com.tibco.plugins</groupId>
-      <artifactId>com.tibco.bw.palette.shared</artifactId>
-      <version>6.1.100</version>
-      <scope>provided</scope>
-    </dependency>
-  </dependencies>
+  <packaging>bwear</packaging>
+  <properties>
+    <appSpace>HelloWorld.module-AppSpace</appSpace>
+    <keystorePath></keystorePath>
+    <profile>default.substvar</profile>
+    <backup>false</backup>
+    <truststorePath></truststorePath>
+    <domainDesc></domainDesc>
+    <bw.Home></bw.Home>
+    <agentPort>8079</agentPort>
+    <truststorePassword></truststorePassword>
+    <agentAuth></agentAuth>
+    <agentHost>HostNam</agentHost>
+    <httpPort>1234</httpPort>
+    <appNode>HelloWorld.module-AppNode</appNode>
+    <osgiPort>1235</osgiPort>
+    <appSpaceDesc></appSpaceDesc>
+    <redeploy>true</redeploy>
+    <tibco.Home></tibco.Home>
+    <keystorePassword></keystorePassword>
+    <backupLocation></backupLocation>
+    <agentPassword></agentPassword>
+    <skipTests>false</skipTests>
+    <appNodeDesc></appNodeDesc>
+    <project.type>AppSpace</project.type>
+    <failIfNoTests>false</failIfNoTests>
+    <agentSSL>false</agentSSL>
+    <agentUsername></agentUsername>
+    <domain>HelloWorld.module-Domain</domain>
+    <deployToAdmin>true</deployToAdmin>
+  </properties>
   <build>
-    <sourceDirectory>src</sourceDirectory>
-    <outputDirectory>target/classes</outputDirectory>
     <plugins>
       <plugin>
         <groupId>com.tibco.plugins</groupId>
         <artifactId>bw6-maven-plugin</artifactId>
         <version>2.0.1</version>
         <extensions>true</extensions>
+        <configuration>
+          <deployToAdmin>${deployToAdmin}</deployToAdmin>
+          <agentHost>${agentHost}</agentHost>
+          <agentPort>${agentPort}</agentPort>
+          <agentAuth>${agentAuth}</agentAuth>
+          <agentUsername>${agentUsername}</agentUsername>
+          <agentPassword>${agentPassword}</agentPassword>
+          <agentSSL>${agentSSL}</agentSSL>
+          <truststorePath>${truststorePath}</truststorePath>
+          <truststorePassword>${truststorePassword}</truststorePassword>
+          <keystorePath>${keystorePath}</keystorePath>
+          <keystorePassword>${keystorePassword}</keystorePassword>
+          <domain>${domain}</domain>
+          <domainDesc>${domainDesc}</domainDesc>
+          <appSpace>${appSpace}</appSpace>
+          <appSpaceDesc>${appSpaceDesc}</appSpaceDesc>
+          <appNode>${appNode}</appNode>
+          <appNodeDesc>${appNodeDesc}</appNodeDesc>
+          <osgiPort>${osgiPort}</osgiPort>
+          <httpPort>${httpPort}</httpPort>
+          <redeploy>${redeploy}</redeploy>
+          <backup>${backup}</backup>
+          <backupLocation>${backupLocation}</backupLocation>
+          <profile>${profile}</profile>
+        </configuration>
       </plugin>
     </plugins>
   </build>
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>com.tibco.plugins</groupId>
+        <artifactId>bw6-maven-plugin</artifactId>
+        <version>2.0.1</version>
+      </plugin>
+    </plugins>
+  </reporting>
+  <profiles>
+    <profile>
+      <id>DEFAULT</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+        <profile>default.substvar</profile>
+      </properties>
+    </profile>
+  </profiles>
 </project>
