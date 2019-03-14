@@ -11,7 +11,7 @@
   <artifactId>HelloWorld</artifactId>
   <packaging>bwear</packaging>
   <properties>
-    <appSpace>HelloWorld.module-AppSpace</appSpace>
+    <appSpace>Dev_AppSpace</appSpace>
     <keystorePath></keystorePath>
     <profile>default.substvar</profile>
     <backup>false</backup>
@@ -21,10 +21,10 @@
     <agentPort>8079</agentPort>
     <truststorePassword></truststorePassword>
     <agentAuth></agentAuth>
-    <agentHost>HostNam</agentHost>
-    <httpPort>1234</httpPort>
-    <appNode>HelloWorld.module-AppNode</appNode>
-    <osgiPort>1235</osgiPort>
+    <agentHost>ip-172-31-19-196.ap-south-1.compute.internal</agentHost>
+    <httpPort>8225</httpPort>
+    <appNode>Dev_AppNode</appNode>
+    <osgiPort>8228</osgiPort>
     <appSpaceDesc></appSpaceDesc>
     <redeploy>true</redeploy>
     <tibco.Home></tibco.Home>
@@ -37,7 +37,7 @@
     <failIfNoTests>false</failIfNoTests>
     <agentSSL>false</agentSSL>
     <agentUsername></agentUsername>
-    <domain>HelloWorld.module-Domain</domain>
+    <domain>Dev_Domain</domain>
     <deployToAdmin>true</deployToAdmin>
   </properties>
   <build>
